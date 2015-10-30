@@ -1,41 +1,76 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <title>Secure Checkout</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/featherlight.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
 
-    <title>UPMC Pharmacy</title>
-
-    <!-- Bootstrap core CSS -->
+    
     <link href="css/bootstrap.css" rel="stylesheet">
 
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/html5shiv.js"></script>
+
+    <script type="text/javascript"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/price-range.js"></script>
+    <script src="js/featherlight.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/respond.js"></script>
+    <script src="js/custom.js"></script>
     <script src="js/ie-emulation-modes-warning.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+
+<script>
+
+$(document).ready(function(){
+    $(".container1").hide();
+    $("#hide").click(function(){
+        $(".container1").hide();
+        document.getElementById("close_button").href="checkout1.html";
+        });
+    $("#show").click(function(){
+        $(".container1").show();
+        document.getElementById("close_button").href="checkout1_log.html";
+    });
+});
+
+</script>
+
   </head>
 
-  <body role="document">
+  <body role="document" onload="$(".container1").hide();">
 
-        <div class="container">    
+    <div class="container">
+        <div class="row">
+
+            <div class="logo col-md-6">
+                <a href="index.html"> <img src="http://www.upmc.com/publishingimages/logo.png" alt="UPMC"></a>
+            </div>
+   
+
+        <div class="lightbox">    
                 <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
                     <div class="panel panel-success" >
                             <div class="panel-heading">
-                                <div class="panel-title ">Sign In</div>
+                                <div class="panel-title "> <h4>Welcome to Secure Checkout</h4></div>
                                 <div style="float:right; font-size: 100%; position: relative; top:-10px">
-                                  <a href="#">Forgot password?</a></div>
+                                  </div>
                             </div>     
 
                             <div style="padding-top:30px" class="panel-body" >
@@ -43,48 +78,41 @@
                                 <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                                     
                                 <form id="loginform" class="form-horizontal" role="form">
-                                            
+                                            Enter your Email
                                     <div style="margin-bottom: 25px" class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">                                        
+                                                <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Email">                                        
                                             </div>
                                         
+                                        Do you have a password?
+
+                                            <div class="radio">
+                                            <label><input type="radio" name="optradio" id="hide" checked> No (We can create one later)</label>
+                                        </div>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio" id="show"> Yes</label></div>
+                                    <div class="container1">
+                                        <br>
+                                        Enter your password
                                     <div style="margin-bottom: 25px" class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                                                 <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+                                          </div>
                                             </div>
                                             
-
-                                         <!--
-                                    <div class="input-group">
-                                              <div class="checkbox">
-                                                <label>
-                                                  <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
-                                                </label>
-                                              </div>
-                                            </div>
-                                        -->
+                                            &nbsp
 
                                         <div style="margin-top:10px" class="form-group">
                                             <!-- Button -->
 
                                             <div class="col-sm-12 controls">
-                                              <a id="btn-login" href="#" class="btn btn-success">Login  </a>
+                                              <a id="close_button" onclick="doLoginToCheckout()" class="btn btn-success">Login</a>
 
                                             </div>
                                         </div>
 
 
-                                        <div class="form-group">
-                                            <div class="col-md-12 control">
-                                                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                                                    Don't have an account! 
-                                                <a href="#" >
-                                                    Sign Up Here
-                                                </a>
-                                                </div>
-                                            </div>
-                                        </div>    
+                                       
                                     </form>     
 
 
@@ -92,74 +120,49 @@
                                 </div>                     
                             </div>  
                 </div>
-                <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                            <div class="panel panel-info">
-                                <div class="panel-heading">
-                                    <div class="panel-title">Sign Up</div>
-                                    <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
-                                </div>  
-                                <div class="panel-body" >
-                                    <form id="signupform" class="form-horizontal" role="form">
-                                        
-                                        <div id="signupalert" style="display:none" class="alert alert-danger">
-                                            <p>Error:</p>
-                                            <span></span>
-                                        </div>
-                                            
-                                        
-                                          
-                                        <div class="form-group">
-                                            <label for="email" class="col-md-3 control-label">Email</label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" name="email" placeholder="Email Address">
-                                            </div>
-                                        </div>
-                                            
-                                        <div class="form-group">
-                                            <label for="firstname" class="col-md-3 control-label">First Name</label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" name="firstname" placeholder="First Name">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="lastname" class="col-md-3 control-label">Last Name</label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" name="lastname" placeholder="Last Name">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password" class="col-md-3 control-label">Password</label>
-                                            <div class="col-md-9">
-                                                <input type="password" class="form-control" name="passwd" placeholder="Password">
-                                            </div>
-                                        </div>
-                                            
-                                        <div class="form-group">
-                                            <label for="icode" class="col-md-3 control-label">Invitation Code</label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" name="icode" placeholder="">
-                                            </div>
-                                        </div>
+     </div> 
+ </div>
+      </div>
 
-                                        <div class="form-group">
-                                            <!-- Button -->                                        
-                                            <div class="col-md-offset-3 col-md-9">
-                                                <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button> 
-                                            </div>
-                                        </div>
-                                                                        
-                                    </form>
-                                 </div>
-                            </div>
 
-                       
-                       
-                        
-                 </div> 
+<div class="row">
+
+    <div class="col-md-1"></div>
+    <div class="col-md-10">&nbsp</div>
+    <div class="col-md-1"></div>
+
+</div>
+
+</br>
+</br>
+</br>
+</br>
+
+<div class="footer-bottom" style="background: #D6D6D0;" >
+        <div class="container">
+
+            <div class="cq-basket-payment"> 
+      <img alt="Payment methods" src="//johnlewis.scene7.com/is/image/JohnLewis/basket-payment-new"> 
+      <div class="cq-basket-verisign-info"> 
+       <img class="cq-verisign-img" alt="VeriSign Secured" src="//johnlewis.scene7.com/is/image/JohnLewis/basket-verisign"> 
+       <p>UPMC is secure<br>and your personal details are protected <a class="cq-verisign-link" href="/customer-services/security-privacy">Learn more.</a></p> 
+      </div> 
+     </div>
+
+
+            <div class="row">
+                <p class="pull-left">Copyright © 2015 UPMC All rights
+                    reserved.</p>
+
+                <p class="pull-right">
+                    Designed by <span>Seven Pounds</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </p>
             </div>
-            
+        </div>
+    </div>
 
-
+ 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

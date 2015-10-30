@@ -6,14 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>UPMC Online Store</title>
+    <title>Browse Products</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
     <link href="css/price-range.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <link href="css/featherlight.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+
+    <style type="text/css">
+        @media all {
+            .lightbox {
+                display: none;
+            }
+        }
+    </style>
+
+
     <script src="js/html5shiv.js"></script>
 
     <script type="text/javascript"></script>
@@ -21,6 +32,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.scrollUp.min.js"></script>
     <script src="js/price-range.js"></script>
+    <script src="js/featherlight.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
     <script src="js/respond.js"></script>
@@ -30,18 +42,202 @@
             $("#id_header").load("header.html");
         });
     </script>
-
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head>
 <!--/head-->
 
 
 <body>
-<div id="id_header"></div>
+<!--header begin-->
+
+<header id="header">
+
+    <!-- First Row with Logo and Login   -->
+    <div class="container">
+        <div class="row">
+
+            <div class="logo col-md-6">
+                <a href="index.html"> <img src="http://www.upmc.com/publishingimages/logo.png" alt="UPMC"></a>
+            </div>
+
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-md-12 text-right">
+
+                        <div class="btn-group">
+
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary"
+                                        data-toggle="dropdown"><span class="glyphicon glyphicon-user"/></span>
+                                    &nbsp;&nbsp;&nbsp;Account &nbsp;&nbsp;&nbsp;<span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu text-left" role="menu">
+                                    <li><a href="#" data-featherlight="#fl3">Sign in</a></li>
+                                    <li><a href="#" data-featherlight="#fl4">Register</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary"
+                                        data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"/></span>
+                                    &nbsp;&nbsp;&nbsp;Cart&nbsp;&nbsp;&nbsp; &nbsp;<span
+                                            class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu text-left" role="menu">
+                                    <li><a href="cart.html">Cart Page</a></li>
+                                    <li><a href="cart.html">Wish Lists</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        &nbsp;
+                    </div>
+                </div>
+                <!-- <div class="row">
+                <div class="col-md-5 text-right">&nbsp;</div>
+            </div> -->
+                <div class="row">
+                    <div class="col-md-5 text-right">&nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <div class="input-group">
+                            <input type="text" class="form-control"
+                                   placeholder="Search for..."> <span
+                                class="input-group-btn">
+									<button class="btn btn-default" type="button"
+                                            onclick="location.href = 'search.html';">
+                                        <span class='glyphicon glyphicon-search'/>
+                                    </button>
+								</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <!--header-bottom-->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <hr>
+                </div>
+
+                <div class="col-lg-12">
+                    <!-- <div id="umpc_logo_container">
+                        <img src="images/home/UPMC_logo.jpg" alt="" height="50px" width="70" />
+                    </div> -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle"
+                                data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span> <span
+                                class="icon-bar"></span> <span class="icon-bar"></span> <span
+                                class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="mainmenu pull-left">
+                        <ul class="nav navbar-nav collapse navbar-collapse">
+                            <li></li>
+                            <li><a href="index.html" class="active"><span
+                                    class='glyphicon glyphicon-home'/></a></li>
+                            <li class="dropdown"><a href="browse.html">Vitamins<i
+                                    class="fa fa-angle-down"></i></a>
+                                <ul role="menu" class="sub-menu">
+                                    <li><a href="browse.html">New Vitamins</a></li>
+                                    <li><a href="browse.html">Herbals</a></li>
+                                    <li><a href="browse.html">Minerals</a></li>
+                                    <li><a href="browse.html">Multivitamins</a></li>
+                                    <li><a href="browse.html">Supplements</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="browse.html">Medicine<i
+                                    class="fa fa-angle-down"></i></a>
+                                <ul role="menu" class="sub-menu">
+                                    <li><a href="browse.html">Allergy & Asthma</a></li>
+                                    <li><a href="browse.html">Braces & Supports</a></li>
+                                    <li><a href="browse.html">Cough, Cold & Flu</a></li>
+                                    <li><a href="browse.html">Digestive Health</a></li>
+                                    <li><a href="browse.html">First Aid</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="browse.html">Child<i
+                                    class="fa fa-angle-down"></i></a>
+                                <ul role="menu" class="sub-menu">
+                                    <li><a href="browse.html">Bath & Skin Care</a></li>
+                                    <li><a href="browse.html">Diapers & Wipes</a></li>
+                                    <li><a href="browse.html">Feeding & Nursing</a></li>
+                                    <li><a href="browse.html">Food & Formula</a></li>
+                                    <li><a href="browse.html">Gifts & Toys</a></li>
+                                    <li><a href="browse.html">Health</a></li>
+                                    <li><a href="browse.html">Natural & Organics</a></li>
+                                    <li><a href="browse.html">Nursery & Home</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="browse.html">Diet<i
+                                    class="fa fa-angle-down"></i></a>
+                                <ul role="menu" class="sub-menu">
+                                    <li><a href="browse.html">Health Monitors</a></li>
+                                    <li><a href="browse.html">Weight Loss</a></li>
+                                    <li><a href="browse.html">Nutritional Drinks</a></li>
+                                    <li><a href="browse.html">Sports Supplements</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="browse.html">Personal Care<i
+                                    class="fa fa-angle-down"></i></a>
+                                <ul role="menu" class="sub-menu">
+                                    <li><a href="browse.html">Bath & Body</a></li>
+                                    <li><a href="browse.html">Ear Care</a></li>
+                                    <li><a href="browse.html">Eye Care</a></li>
+                                    <li><a href="browse.html">Foot Care</a></li>
+                                    <li><a href="browse.html">Lip Care</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="browse.html">Sexual Health<i
+                                    class="fa fa-angle-down"></i></a>
+                                <ul role="menu" class="sub-menu">
+                                    <li><a href="browse.html">Health Monitors</a></li>
+                                    <li><a href="browse.html">Weight Loss</a></li>
+                                    <li><a href="browse.html">Nutritional Drinks</a></li>
+                                    <li><a href="browse.html">Sports Supplements</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="browse.html">Skin care<i
+                                    class="fa fa-angle-down"></i></a>
+                                <ul role="menu" class="sub-menu">
+                                    <li><a href="browse.html">Facial Care</a></li>
+                                    <li><a href="browse.html">Body Care</a></li>
+                                    <li><a href="browse.html">Lotions</a></li>
+                                    <li><a href="browse.html">Creams</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--/header-bottom-->
+    <iframe class="lightbox" src="login.html" width="500" height="400" id="fl3" style="border:none;"
+            webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+    <iframe class="lightbox" src="createaccount.html" width="500" height="500" id="fl4" style="border:none;"
+            webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+</header>
+<!--header end-->
+<!--header end-->
+<!--header end-->
+<!--header end-->
+<!--everything above is header-->
+<!--everything above is header-->
+<!--everything above is header-->
+<!--everything above is header-->
+<!--everything above is header-->
+<!--everything above is header-->
 
 
 <section>
@@ -181,9 +377,7 @@
                     </div>
                     <!--/brands_products-->
 
-                    <div class="shipping text-center"><!--shipping-->
-                        <img src="images/home/shipping.jpg" alt=""/>
-                    </div>
+
                     <!--/shipping-->
 
                 </div>
@@ -192,74 +386,40 @@
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
 
-                    <h2 class="title text-center">Home -> Vitamins -> Nature's Own </h2>
+                    <h2 class="title text-center">Home->Vitamin</h2>
 
                     <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort<span
-                                class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Price Low to High</a></li>
-                            <li><a href="#">Price High to Low</a></li>
-                            <li><a href="#">Highest Rated</a></li>
-                            <li><a href="#">Most Reviews</a></li>
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Sort
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="searchByPrice.html">Price Low to High</a></li>
+                            <li><a href="searchByPriceHigh.html">Rrice High to Low</a></li>
+                            <li><a href="searchByHighestReviews.html">Highest Rated</a></li>
+                            <li><a href="searchByMostReviews.html">Most Reviews</a></li>
                         </ul>
-                    </div>
-
-
-                    <div class="text-right">
-                        <ul class="pagination">
-                            <li class="active"><a href="">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href="">&raquo;</a></li>
-                        </ul>
-                    </div>
-
-
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-
-                                    <a href="productDetail_2.html">
-                                        <img src="images/shop/product12.jpg" alt=""/>
-
-                                        <h2>Advil</h2>
-
-                                        <p>$5.99 <font size="1">$0.15/pill</font></p>
-
-                                        <p>Quanity 50pcs</p>
-
-                                        <p>
-                                            Rating
-                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                            <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                                        </p>
-
-                                        <p>55 Reviews</p>
-
-                                        <a href="cart.html" class="btn btn-default add-to-cart"><i
-                                                class="fa fa-shopping-cart"></i>Add to cart</a>
-                                    </a>
-                                </div>
-
-                            </div>
-
+                        <div class="text-right">
+                            <ul class="pagination">
+                                <li class="active"><a href="">1</a></li>
+                                <li><a href="">2</a></li>
+                                <li><a href="">3</a></li>
+                                <li><a href="">&raquo;</a></li>
+                            </ul>
                         </div>
                     </div>
+
                     <div class="col-sm-4">
                         <div class="product-image-wrapper">
                             <div class="single-products">
                                 <div class="productinfo text-center"><a href="productDetail_2.html">
 
-                                    <img src="images/shop/product11.jpg" alt=""/>
+                                    <img src="images/shop/product12.jpg" alt=""/>
 
-                                    <h2>Advil</h2>
+                                    <h2>Vitafusion PreNatal</h2>
 
-                                    <p>$5.99 <font size="1">$0.15/pill</font></p>
+                                    <p><font size="4">$5.99 <font size="3">($0.15/pill)</font></p>
 
                                     <p>Quanity 50pcs</p>
 
@@ -274,9 +434,39 @@
 
                                     <p>55 Reviews</p>
 
-                                    <a href="cart.html" class="btn btn-default add-to-cart"><i
-                                            class="fa fa-shopping-cart"></i>Add to cart</a>
-                                </a>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add
+                                        to cart</a></a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center"><a href="productDetail_2.html">
+                                    <img src="images/shop/product11.jpg" alt=""/>
+
+                                    <h2>Super B-Complex</h2>
+
+                                    <p><font size="4">$5.99 <font size="3">($0.15/pill)</font></p>
+
+                                    <p>Quanity 50pcs</p>
+
+                                    <p>
+                                        Rating
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                    </p>
+
+                                    <p>55 Reviews</p>
+
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add
+                                        to cart</a></a>
                                 </div>
 
                             </div>
@@ -289,9 +479,9 @@
                                 <div class="productinfo text-center"><a href="productDetail_2.html">
                                     <img src="images/shop/product10.jpg" alt=""/>
 
-                                    <h2>Advil</h2>
+                                    <h2>C Pure 500mg</h2>
 
-                                    <p>$5.99 <font size="1">$0.15/pill</font></p>
+                                    <p><font size="4">$5.99 <font size="3">($0.15/pill)</font></p>
 
                                     <p>Quanity 50pcs</p>
 
@@ -306,10 +496,8 @@
 
                                     <p>55 Reviews</p>
 
-                                    <a href="cart.html" class="btn btn-default add-to-cart"><i
-                                            class="fa fa-shopping-cart"></i>Add
-                                        to cart</a>
-                                </a>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add
+                                        to cart</a></a>
                                 </div>
 
                             </div>
@@ -322,9 +510,9 @@
                                 <div class="productinfo text-center"><a href="productDetail_2.html">
                                     <img src="images/shop/product9.jpg" alt=""/>
 
-                                    <h2>Advil</h2>
+                                    <h2>C Vitamin 100mg</h2>
 
-                                    <p>$5.99 <font size="1">$0.15/pill</font></p>
+                                    <p><font size="4">$5.99 <font size="3">($0.15/pill)</font></p>
 
                                     <p>Quanity 50pcs</p>
 
@@ -339,12 +527,9 @@
 
                                     <p>55 Reviews</p>
 
-                                    <a href="cart.html" class="btn btn-default add-to-cart"><i
-                                            class="fa fa-shopping-cart"></i>Add
-                                        to cart</a>
-                                </a>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add
+                                        to cart</a></a>
                                 </div>
-
 
                                 <img src="images/home/new.png" class="new" alt=""/>
                             </div>
@@ -357,9 +542,9 @@
                                 <div class="productinfo text-center"><a href="productDetail_2.html">
                                     <img src="images/shop/product8.jpg" alt=""/>
 
-                                    <h2>Advil</h2>
+                                    <h2>Energize</h2>
 
-                                    <p>$5.99 <font size="1">$0.15/pill</font></p>
+                                    <p><font size="4">$5.99 <font size="3">($0.15/pill)</font></p>
 
                                     <p>Quanity 50pcs</p>
 
@@ -374,10 +559,8 @@
 
                                     <p>55 Reviews</p>
 
-                                    <a href="cart.html" class="btn btn-default add-to-cart"><i
-                                            class="fa fa-shopping-cart"></i>Add
-                                        to cart</a>
-                                </a>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add
+                                        to cart</a></a>
                                 </div>
 
                                 <img src="images/home/sale.png" class="new" alt=""/>
@@ -391,9 +574,9 @@
                                 <div class="productinfo text-center"><a href="productDetail_2.html">
                                     <img src="images/shop/product7.jpg" alt=""/>
 
-                                    <h2>Advil</h2>
+                                    <h2>VitaGummies</h2>
 
-                                    <p>$5.99 <font size="1">$0.15/pill</font></p>
+                                    <p><font size="4">$5.99 <font size="3">($0.15/pill)</font></p>
 
                                     <p>Quanity 50pcs</p>
 
@@ -408,10 +591,8 @@
 
                                     <p>55 Reviews</p>
 
-                                    <a href="cart.html" class="btn btn-default add-to-cart"><i
-                                            class="fa fa-shopping-cart"></i>Add
-                                        to cart</a>
-                                </a>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add
+                                        to cart</a></a>
                                 </div>
 
                             </div>
@@ -425,9 +606,9 @@
                                 <div class="productinfo text-center"><a href="productDetail_2.html">
                                     <img src="images/home/product6.jpg" alt=""/>
 
-                                    <h2>Advil</h2>
+                                    <h2>Vitamin B2</h2>
 
-                                    <p>$5.99 <font size="1">$0.15/pill</font></p>
+                                    <p><font size="4">$5.99 <font size="3">($0.15/pill)</font></p>
 
                                     <p>Quanity 50pcs</p>
 
@@ -442,10 +623,8 @@
 
                                     <p>55 Reviews</p>
 
-                                    <a href="cart.html" class="btn btn-default add-to-cart"><i
-                                            class="fa fa-shopping-cart"></i>Add
-                                        to cart</a>
-                                </a>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add
+                                        to cart</a></a>
                                 </div>
 
                             </div>
@@ -459,9 +638,9 @@
                                 <div class="productinfo text-center"><a href="productDetail_2.html">
                                     <img src="images/home/product5.jpg" alt=""/>
 
-                                    <h2>Advil</h2>
+                                    <h2>RECHARGE</h2>
 
-                                    <p>$5.99 <font size="1">$0.15/pill</font></p>
+                                    <p><font size="4">$5.99 <font size="3">($0.15/pill)</font></p>
 
                                     <p>Quanity 50pcs</p>
 
@@ -476,10 +655,8 @@
 
                                     <p>55 Reviews</p>
 
-                                    <a href="cart.html" class="btn btn-default add-to-cart"><i
-                                            class="fa fa-shopping-cart"></i>Add
-                                        to cart</a>
-                                </a>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add
+                                        to cart</a></a>
                                 </div>
 
                             </div>
@@ -493,9 +670,9 @@
                                 <div class="productinfo text-center"><a href="productDetail_2.html">
                                     <img src="images/home/product4.jpg" alt=""/>
 
-                                    <h2>Advil</h2>
+                                    <h2>Liv-a-New</h2>
 
-                                    <p>$5.99 <font size="1">$0.15/pill</font></p>
+                                    <p><font size="4">$5.99 <font size="3">($0.15/pill)</font></p>
 
                                     <p>Quanity 50pcs</p>
 
@@ -510,10 +687,8 @@
 
                                     <p>55 Reviews</p>
 
-                                    <a href="cart.html" class="btn btn-default add-to-cart"><i
-                                            class="fa fa-shopping-cart"></i>Add
-                                        to cart</a>
-                                </a>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add
+                                        to cart</a></a>
                                 </div>
 
                             </div>
@@ -527,9 +702,9 @@
                                 <div class="productinfo text-center"><a href="productDetail_2.html">
                                     <img src="images/home/product3.jpg" alt=""/>
 
-                                    <h2>Advil</h2>
+                                    <h2>Vitamin D Gummies</h2>
 
-                                    <p>$5.99 <font size="1">$0.15/pill</font></p>
+                                    <p><font size="4">$5.99 <font size="3">($0.15/pill)</font></p>
 
                                     <p>Quanity 50pcs</p>
 
@@ -544,10 +719,8 @@
 
                                     <p>55 Reviews</p>
 
-                                    <a href="cart.html" class="btn btn-default add-to-cart"><i
-                                            class="fa fa-shopping-cart"></i>Add
-                                        to cart</a> </a>
-
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add
+                                        to cart</a></a>
                                 </div>
 
                             </div>
@@ -562,9 +735,9 @@
                                 <div class="productinfo text-center"><a href="productDetail_2.html">
                                     <img src="images/home/product2.jpg" alt=""/>
 
-                                    <h2>Advil</h2>
+                                    <h2>Pure Carrot Oil</h2>
 
-                                    <p>$5.99 <font size="1">$0.15/pill</font></p>
+                                    <p><font size="4">$5.99 <font size="3">($0.15/pill)</font></p>
 
                                     <p>Quanity 50pcs</p>
 
@@ -579,10 +752,8 @@
 
                                     <p>55 Reviews</p>
 
-                                    <a href="cart.html" class="btn btn-default add-to-cart"><i
-                                            class="fa fa-shopping-cart"></i>Add
-                                        to cart</a>
-                                </a>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add
+                                        to cart</a></a>
                                 </div>
 
                             </div>
@@ -596,9 +767,9 @@
                                 <div class="productinfo text-center"><a href="productDetail_2.html">
                                     <img src="images/home/product1.jpg" alt=""/>
 
-                                    <h2>Advil</h2>
+                                    <h2>Ashvagandha</h2>
 
-                                    <p>$5.99 <font size="1">$0.15/pill</font></p>
+                                    <p><font size="4">$5.99 <font size="3">($0.15/pill)</font></p>
 
                                     <p>Quanity 50pcs</p>
 
@@ -613,18 +784,14 @@
 
                                     <p>55 Reviews</p>
 
-                                    <a href="cart.html" class="btn btn-default add-to-cart"><i
-                                            class="fa fa-shopping-cart"></i>Add
-                                        to cart</a>
-                                </a>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add
+                                        to cart</a></a>
                                 </div>
 
                             </div>
 
                         </div>
                     </div>
-
-
                     <div class="text-right">
 
                         <ul class="pagination">
@@ -640,9 +807,113 @@
         </div>
     </div>
 </section>
-</footer><!--/Footer-->
 
 
-<div id="id_footer"></div>
+<!--everything below here is footer -->
+<!--footer Begin-->
+
+<footer id="footer">
+
+
+    <div class="footer-widget">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="companyinfo">
+                        <h2>
+                            <span>UPMC</span>
+                        </h2>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <div class="single-widget">
+                        <h2>Service</h2>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="404.html">Online Help</a></li>
+                            <li><a href="404.html">Contact Us</a></li>
+                            <li><a href="404.html">Order Status</a></li>
+                            <li><a href="404.html">Change Location</a></li>
+                            <li><a href="404.html">FAQ’s</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="single-widget">
+                        <h2>QUICK SHOP</h2>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="404.html">Vitamins</a></li>
+                            <li><a href="404.html">Medicine</a></li>
+                            <li><a href="404.html">Personal Care</a></li>
+                            <li><a href="404.html">Child</a></li>
+                            <li><a href="404.html">Skin Care</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="single-widget">
+                        <h2>Policies</h2>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="404.html">Terms of Use</a></li>
+                            <li><a href="404.html">Privecy Policy</a></li>
+                            <li><a href="404.html">Refund Policy</a></li>
+                            <li><a href="404.html">Billing System</a></li>
+                            <li><a href="404.html">Ticket System</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="single-widget">
+                        <h2>About Shopper</h2>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="404.html">Company Information</a></li>
+                            <li><a href="404.html">Careers</a></li>
+                            <li><a href="404.html">Store Location</a></li>
+                            <li><a href="404.html">Affillate Program</a></li>
+                            <li><a href="404.html">Copyright</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- <div class="col-sm-3 col-sm-offset-1">
+                    <div class="single-widget">
+                        <h2>About Shopper</h2>
+                        <form action="#" class="searchform">
+                            <input type="text" placeholder="Your email address" />
+                            <button type="submit" class="btn btn-default">
+                                <i class="fa fa-arrow-circle-o-right"></i>
+                            </button>
+                            <p>
+                                Get the most recent updates from <br />our site and be updated
+                                your self...
+                            </p>
+                        </form>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <p class="pull-left">Copyright © 2015 UPMC All rights
+                    reserved.</p>
+
+                <p class="pull-right">
+                    Designed by <span>Seven Pounds</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<!--Footer end -->
 </body>
 </html>
+
